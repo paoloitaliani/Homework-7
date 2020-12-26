@@ -365,10 +365,7 @@ sqrlossbackward <- sqrt(mean((yhat-cvdata$y)^2))
 |-----------:|---------:|---------:|
 |   0.2159978| 0.2179183| 0.2174766|
 
-```
-## Warning in kable_markdown(x = structure(c("best subset", "forward", "backward", : The table
-## should have a header (column names)
-```
+
 
 
 
