@@ -1,9 +1,41 @@
----
-title: "Homework 7"
-author: "Paolo Italiani"
-date: "11/27/2020"
-output: pdf_document
----
+# Exercise 1
+
+ On the Virtuale page of the course (under Data Sets) you find the dataset
+baseball.txt. You can read it using
+baseball <- read.csv("baseball.txt",header=TRUE)
+The baseball dataset contains salary information for 337 Major League Baseball (MLB)
+players who are not pitchers and played at least one game during both the 1991 and 1992
+seasons. The purpose of the study is to determine whether a baseball player’s salary is a
+reflection of his offensive performance. A good predictive performance is also of interest.
+For each player, the salary from the 1992 season along with 12 offensive statistics from the
+1991 season were collected. In addition to these variables, there are 4 indicator variables
+which identify free agency and eligibility for arbitration.
+
+Find an appropriate linear regression model explaining the response variable y by some or
+all of the other variables. Interpret your final model, and comment on the appropriateness
+of the model assumptions.
+It may be useful to transform the y-variable. As part of your analyses, compare at leats one
+model that uses the original y-variable and one model that uses a transformed y-variable
+using a cross-validation scheme that makes models with and without transformation appropriately comparable.
+
+# Exercise 2 
+For the baseball dataset above (with untransformed y) run backward elimination using the regsubsets-function, and compare the models with different numbers of
+variables by estimated expected prediction errors1 using LOO-CV, 5-fold, and 10-fold CV.
+Compare the different prediction error estimates, and the rankings of models according to
+the three CV-schemes. To what extent do they agree with each other?
+
+# Exercise 3
+
+For the Ozone data, use “outer” cross-validation (you can use LOO-CV, 5-fold,
+or 10-fold as you like) to compare the full model, and the models selected by backward
+elimination, forward selection, and best subset selection regarding the estimated expected
+prediction error in a way that is unaffected by selection bias (this means double crossvalidation if cross-validation is used to select the model in an “inner loop”, but if the model
+is selected by AIC or fixed, only “outer” cross-validation of the full selection process is
+needed). Does the result differ from the result given on the slides without using double
+cross-validation?
+Also save all numbers of variables that were chosen by backward, forward, and best subset
+selection on the different datasets that occur in the outer CV, and comment on the stability
+of these selections.
 
 # Exercise 1
 
@@ -230,7 +262,7 @@ In this table it's showcasedthe  rankings of models according to
 the three CV-schemes in descending order
 
 
-# Exercise 4
+# Exercise 3
 
 ```r
 ozone=read.table("ozone.txt",header = T)
